@@ -1,9 +1,6 @@
-from models.encoder import JSONEncoder
-
-
 def student_entity(db_item) -> dict:
     return {
-        "id": JSONEncoder().encode(db_item["_id"]),
+        "id": str(db_item["_id"]),
         "full_name": db_item["full_name"],
         "email": db_item["email"],
         "phone": db_item["phone"]
